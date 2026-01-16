@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
@@ -6,7 +5,8 @@ export default defineNuxtConfig({
   modules: [
     '@pinia/nuxt',
     '@nuxtjs/tailwindcss',
-    'nuxt-icon'
+    '@nuxt/icon',
+    '@nuxt/eslint',
   ],
 
   pinia: {
@@ -20,14 +20,12 @@ export default defineNuxtConfig({
     viewer: true,
   },
 
-  // Runtime config for env variables
   runtimeConfig: {
     public: {
       apiBase: process.env.NUXT_PUBLIC_API_BASE || '/api',
     }
   },
 
-  // TypeScript
   typescript: {
     strict: true,
     typeCheck: true
